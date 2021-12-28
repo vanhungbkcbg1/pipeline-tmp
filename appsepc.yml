@@ -2,8 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html
+    destination: /var/www/html/
 hooks:
-  ApplicationStart:
-    - location: ./installApp.sh
+  BeforeInstall:
+    - location: deploy_script/before_install.sh
       timeout: 300
+      runas: root
+  AfterInstall:
+    - location: deploy_script/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: deploy_script/application_start.sh
+      timeout: 120
+      runas: root
+  ApplicationStop:
+    - location: deploy_script/application_stop.sh
+      timeout: 120
+      runas: root
