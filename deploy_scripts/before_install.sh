@@ -1,10 +1,10 @@
 #!/bin/bash
 echo "Before install"
-apt install software-properties-common -y
-add-apt-repository ppa:ondrej/php
+apt install  ca-certificates apt-transport-https software-properties-common
+add-apt-repository ppa:ondrej/php -y
 apt update -y
 apt install nginx -y
-apt install php7.4-fpm php7.4-mysql php7.4-mbstring -y
-service php7.4-fpm start
+apt install php8.0-fpm php9.0-mysql php8.0-mbstring -y
+service php8.0-fpm start
 
 
