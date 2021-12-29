@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Before install"
-apt install  ca-certificates apt-transport-https software-properties-common
+apt install  ca-certificates apt-transport-https software-properties-common -y
 add-apt-repository ppa:ondrej/php -y
 apt update -y
 apt install nginx -y
