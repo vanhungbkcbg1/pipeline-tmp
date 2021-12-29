@@ -7,5 +7,5 @@ php -r "unlink('composer-setup.php');"
 php composer.phar self-update 1.10.10
 php composer.phar install --no-interaction --no-progress
 # copy config to nginx config
-cp ./conf/laravel.conf /etc/nginx/conf.d/
+cp ./conf/laravel.conf /etc/nginx/sites-available/default
 service nginx reload
