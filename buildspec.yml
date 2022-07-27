@@ -1,22 +1,21 @@
 version: 0.2
 phases:
   install:
+#    install php
     runtime-versions:
       php: 7.3
     commands:
     - echo Nothing to install
     - php -v
   pre_build:
+#    install dependencies example: composer installl
     commands:
       - echo pre-build
   build:
+#    run unit test here
     commands:
       - echo Build started on `date`
   post_build:
+#    notification build process
     commands:
       - echo Build completed on `date`
-artifacts:
-  files:
-    - '**/*'
-  base-directory: 'html'
-  discard-paths: no
