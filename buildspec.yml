@@ -1,7 +1,7 @@
 version: 0.2
 phases:
-install:
-  commands:
+  install:
+    commands:
     - echo Nothing to install
     - echo php -v
   pre_build:
