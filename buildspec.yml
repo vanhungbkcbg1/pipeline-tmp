@@ -22,6 +22,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: ./
+  base-directory: ./app
   name: build-artifact-name
   discard-paths: no
