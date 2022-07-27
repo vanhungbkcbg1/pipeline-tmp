@@ -6,11 +6,15 @@ phases:
       php: 7.3
     commands:
       - echo Nothing to install
-      - php -v
+      - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+      - php composer-setup.php
+      - php -r "unlink('composer-setup.php');"
+      - php composer.phar self-update 1.10.10
   pre_build:
 #    install dependencies example: composer installl
     commands:
       - echo pre-build
+      - php composer.phar install --no-interaction --no-progress
   build:
 #    run unit test here
     commands:
