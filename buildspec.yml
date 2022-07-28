@@ -1,4 +1,7 @@
 version: 0.2
+env:
+  parameter-store:
+    my_value: "name"
 phases:
   install:
 #    install php
@@ -10,6 +13,7 @@ phases:
       - php composer-setup.php
       - php -r "unlink('composer-setup.php');"
       - php composer.phar self-update 1.10.10
+      - echo $my_value
   pre_build:
 #    install dependencies example: composer install
     commands:
